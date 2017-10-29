@@ -85,7 +85,6 @@ get_version_info(OGG_VERSION_INFO "LIB_CURRENT" "LIB_AGE" "LIB_REVISION")
 set_target_properties(
     ogg PROPERTIES
     SOVERSION ${OGG_VERSION_INFO}
-    PUBLIC_HEADER "${OGG_HEADERS}"
 )
 
 ### Install ###
@@ -120,8 +119,12 @@ install(
   LIBRARY DESTINATION "lib"
   ARCHIVE DESTINATION "lib"
   RUNTIME DESTINATION "bin"
-  INCLUDES DESTINATION "${include_install_dir}/ogg"
-  PUBLIC_HEADER DESTINATION "${include_install_dir}/ogg"
+  INCLUDES DESTINATION "${include_install_dir}"
+  )
+
+install(
+  FILES ${OGG_HEADERS}
+  DESTINATION "${include_install_dir}/ogg/"
   )
 
 install(
