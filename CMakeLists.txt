@@ -79,6 +79,7 @@ set(ogg_inc_dir "${CMAKE_CURRENT_LIST_DIR}/include")
 target_include_directories(ogg
   PRIVATE
   "$<BUILD_INTERFACE:${ogg_inc_dir}>"
+  "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>"
   )
 
 get_version_info(OGG_VERSION_INFO "LIB_CURRENT" "LIB_AGE" "LIB_REVISION")
